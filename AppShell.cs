@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using Btreaties.BusinessSuite.Pos;
 
 class AppShell
@@ -78,8 +79,29 @@ class AppShell
             var newStr = email.Substring(0, email.Length - validDomain.Length);
             Console.WriteLine($"Found Index: {foundIndex}, New Str: {newStr}");
         }
-       
         
+        //=========================================================================================================
+        //
+        /*
+         *  Implicit and Explicit Type declaration 
+         * 
+         */
+
+        string companyAddress;
+        var myEmail = "james@gmail.com";
+        var someInfo = myEmail;
+        var dateOfBirth = new DateOnly(1985, 1, 1);
+        var meetingTime = new TimeOnly(15, 0, 0);
+        var transactionDate = new DateTime(2026, 03, 25,10, 21,0);
+        System.Globalization.CultureInfo customCulture = new System.Globalization.CultureInfo("en-US");
+        var cultures= CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+        var timeZone = TimeZoneInfo.GetSystemTimeZones().ToList();
+
+        foreach (var culture in cultures)
+        {
+            Console.WriteLine($"Culture Name : {culture.Name}, Currency Symbol: {culture.NumberFormat.CurrencySymbol}, " +
+                              $"Display Name : {culture.DisplayName}, ISO Lang Name: {culture.TwoLetterISOLanguageName}, {string.Join(" " ,culture.DateTimeFormat.MonthNames)}");
+        }
         Console.ReadLine();
     }
 
