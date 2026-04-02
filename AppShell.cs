@@ -1,5 +1,6 @@
 using System;
 using Btreaties.BusinessSuite.Pos;
+using helloworld;
 using static System.Console;
 class AppShell
 {
@@ -10,9 +11,15 @@ class AppShell
         int x = 10;
         int y = 2 * x++;
         int z = (++x) - 5 + y++;
+        TypeCasting.StudentGradeCalculator();
+        TypeCasting.RunTypeCastingDemo();
+        Console.ReadLine();
+    }
 
+    static void StartCalculator()
+    {
         PrintMenu();
-        
+
         // Find x, y z ;
         Write("Please Enter Menu Option Number: ");
         var selectedMenu = ReadLine();
@@ -21,7 +28,6 @@ class AppShell
         {
             RunAdditionCalculator();
         }
-        Console.ReadLine();
     }
 
     private static void RunAdditionCalculator()

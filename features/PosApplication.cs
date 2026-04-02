@@ -7,6 +7,7 @@ namespace Btreaties.BusinessSuite.Pos
         public void RenderPosMenus()
         {
             Console.WriteLine("===============POS Menu System====================");
+            
         }
     }
 }
