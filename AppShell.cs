@@ -7,12 +7,50 @@ class AppShell
     static void Main(string[] args)
     {
         Console.WriteLine("Logical Operators!");
-
+        string data = "Elephant";  // a L f R e D
+        //
+        string result = "";
+        int skipIndex = 0; 
+        label:
+        result += skipIndex % 2 > 0 ? data[skipIndex++].ToString().ToUpper() : data[skipIndex++].ToString().ToLower();
+        if (skipIndex < data.Length)
+        {
+          goto label;  
+        }
+        
+        
+        Console.Write(result);
+        ReadLine();
+        
         int x = 10;
         int y = 2 * x++;
         int z = (++x) - 5 + y++;
-        TypeCasting.StudentGradeCalculator();
-        TypeCasting.RunTypeCastingDemo();
+        //TypeCasting.StudentGradeCalculator();
+        //TypeCasting.RunTypeCastingDemo();
+        long factorial = 1;
+        Write("Enter a number to get Factorial : ");
+        var isValidaNum = int.TryParse(ReadLine(), out int num);
+        int num2 = num;
+        if (isValidaNum && num > 0 && num <= 20)
+        {
+            factorial = num;  // 5
+            runFactotial :
+            factorial *= --num ;  // 5 * (4) * 3 * 2 *1
+            if (num > 1)
+            {
+                goto runFactotial;
+            }
+            
+            WriteLine($"Factorial is {factorial}");
+            
+            WriteLine($"Using Factorial Calculator : {Factorial(num2)}");
+            WriteLine($"Using Factorial Loop : {FactorialN(num2)}");
+        }
+        else
+        {
+            WriteLine($"You entered an invalid number, Please try again");
+        }
+        
         Console.ReadLine();
     }
 
@@ -29,6 +67,19 @@ class AppShell
             RunAdditionCalculator();
         }
     }
+
+    static long Factorial(int n) => n <=1 ? 1 : n * Factorial(n - 1);
+
+    static long FactorialN(int n)
+    {
+        long result = 1;
+        for (int i = n; i >= 1 ; i--)
+        {
+            result *= i;
+        }
+        return result;
+    }
+    
 
     private static void RunAdditionCalculator()
     {

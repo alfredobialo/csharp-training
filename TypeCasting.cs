@@ -62,6 +62,7 @@ public class TypeCasting
             (score >= 35  && score <= 39) ? "D" :
             (score >= 30  && score <= 34) ? "E" : "F"
             ;
+        
         if (score >= 80)
         {
             grade = "A";
