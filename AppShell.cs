@@ -6,6 +6,8 @@ class AppShell
 {
     static void Main(string[] args)
     {
+        DateOnly dateOfBirth = new DateOnly(2008, 10,15);
+        Console.WriteLine($"Date Of Birth : {dateOfBirth:yyyy-M-d dddd}");
         Console.WriteLine("Logical Operators!");
         string data = "Elephant";  // a L f R e D
         //
