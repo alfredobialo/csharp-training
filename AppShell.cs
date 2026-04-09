@@ -10,6 +10,15 @@ class AppShell
         Write("Enter your Gender : ");
         string gender  =  ReadLine();
 
+        var result = gender?.ToLower().Trim() switch
+        {
+            "male" => "Welcome Mr",
+            "female" => "Welcome Miss",
+            _ => "Hmmm! we can't identify your gender"
+        };
+        
+        WriteLine(result);
+
         switch (gender?.ToLower().Trim())
         {
             case "male":
